@@ -1,0 +1,55 @@
+{
+  "compilerOptions": {
+    // 目标代码(ts -> js (es5/6/7))
+    "target": "esnext", // es5
+    // 目标代码需要使用的模块化
+    // (common js require/module.exports)
+    // (es module  import/export)
+    "module": "esnext", // umd会比较多
+    // 严格模式,严格的一些检查
+    "strict": false,
+    // 要不要对jsx的处理(保留,不转化)
+    "jsx": "preserve",
+    // 帮助我们做辅助的导入功能
+    "importHelpers": true,
+    // 按照node的方式去解析模块 import '/index(.ts/.js)'
+    "moduleResolution": "node",
+    // 跳过对一些库的类型检测(axios -> 类型/ lodash -> @types/lodash)
+    "skipLibCheck": true,
+    // export default/module.exports = {}
+    // es module 和 commonjs 能不能混合使用
+    // 这两个属性一般是一起的
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    // 强制区分大小写
+    "forceConsistentCasingInFileNames": true,
+    // 生成符合ECMAScript标准的类字段
+    "useDefineForClassFields": true,
+    // 要不要生成映射文件(ts -> js)
+    "sourceMap": true,
+    // 文件路径在解析式的基本URL
+    "baseUrl": ".",
+    // 指定要具体解析使用的类型
+    "types": ["webpack-env"],
+    // 路径解析(类似于webpackd alias)
+    "paths": {
+      "@/*": ["src/*"],
+      "components/*": ["src/components/*"],
+      "/router/*": ["src/router/*"]
+    },
+    // 可以指定在项目中可以使用那些库的类型
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
+  },
+  // 那些文件会进行解析
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "types/**/*.d.ts",
+    "types/**/*.ts",
+    "tests/**/*.ts",
+    "tests/**/*.tsx"
+  ],
+  // 需要排除那些文件
+  "exclude": ["node_modules"]
+}
