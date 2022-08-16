@@ -3,7 +3,7 @@
     <div class="logo">
       <!-- 在template中是用别用前面要加上~ -->
       <img class="img" src="~@/assets/img/logo.svg" alt="logo" />
-      <span v-if="!collapse" class="title">beichen + ts</span>
+      <span v-if="!collapse" class="title">beichen + TS</span>
     </div>
     <el-menu
       :default-active="defaultValue"
