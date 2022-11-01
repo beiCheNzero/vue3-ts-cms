@@ -1,14 +1,10 @@
 const path = require('path')
 
-const {
-  defineConfig
-} = require('@vue/cli-service')
+const { defineConfig } = require('@vue/cli-service')
 const AutoImport = require('unplugin-auto-import/webpack')
 // 引入自动引入插件
 const Components = require('unplugin-vue-components/webpack')
-const {
-  ElementPlusResolver
-} = require('unplugin-vue-components/resolvers')
+const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
 // 导入element-plus图标库
 // const Icons = require('unplugin-icons/webpack')
 // const IconsResolver = require('unplugin-icons/resolver')
@@ -52,7 +48,7 @@ module.exports = defineConfig({
       }),
       Components({
         resolvers: [ElementPlusResolver()]
-      }),
+      })
       // Icons({
       //   compiler: 'vue3',
       //   // 自动安装
@@ -60,7 +56,7 @@ module.exports = defineConfig({
       // }),
     ]
   },
-  transpileDependencies: true,
+  transpileDependencies: true
   // configureWebpack: (config) => {
   //   config.resolve.alias = {
   //       // __dirname当前路径，这里要写绝对路径
