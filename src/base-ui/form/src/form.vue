@@ -98,7 +98,7 @@ export default defineComponent({
    */
   emits: ['update:modelValue'],
   setup(props, { emit }) {
-    // 第一种方式
+    // 第一种方式 (双向绑定的方式)
     // const formData = ref({ ...props.modelValue })
 
     // watch(
@@ -109,7 +109,7 @@ export default defineComponent({
     //   { deep: true }
     // )
 
-    // 第二种方式
+    // 第二种方式  (不使用双向绑定方式)
     const handleValueChange = (value: any, field: string) => {
       emit('update:modelValue', { ...props.modelValue, [field]: value })
     }

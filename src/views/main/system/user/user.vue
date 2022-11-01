@@ -45,7 +45,7 @@ export default defineComponent({
   },
   setup() {
     // 也可以直接在return中结构usePageSearch,代码的阅读性比较差
-    const [pageContentRef, handleQueryClick, handleResetClick] = usePageSearch()
+    const [pageContentRef, handleQueryClick, handleResetClick] = usePageSearch() as any
 
     // pageModel相关的hook逻辑
     // 1.处理是否显示密码的相关逻辑
@@ -90,7 +90,7 @@ export default defineComponent({
     const [pageModelRef, defaultInfo, handleNewData, handleEditData] = usePageModel(
       newCallback,
       editCallback
-    )
+    ) as any
 
     return {
       searchFormConfig,

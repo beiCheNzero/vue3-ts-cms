@@ -65,7 +65,7 @@ const loginModule: Module<IloginState, IRootState> = {
        */
       // 1.实现登录逻辑
       const loginResult = await accountLoginRequest(payload)
-      console.log(loginResult)
+      console.log('res', loginResult)
       const { id, token } = loginResult.data
       // 这里需要对token进行修改，需要在mutations中进行
       commit('changeToken', token)

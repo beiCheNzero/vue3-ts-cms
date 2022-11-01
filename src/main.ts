@@ -29,8 +29,6 @@ const app = createApp(App)
 // 注册全局的方法
 app.use(globalRegister)
 
-console.log()
-
 // 通过遍历的方式注册所有 svg组件，会牺牲一点点性能
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
   // 新增名为Menu的判断
@@ -60,7 +58,7 @@ app.use(router)
 
 app.mount('#app')
 
-// console.log(process.env.VUE_APP_BASE_URL)
+console.log(process.env.VUE_APP_BASE_URL)
 
 // ljlRequest.requset({
 //   url: '/home/multidata',

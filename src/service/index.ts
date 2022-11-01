@@ -13,6 +13,7 @@ const ljlRequest = new LJLRequest({
      */
     // 请求成功的拦截器
     requestInterceptor: (config) => {
+      console.log(config)
       // 携带token的拦截
       const token = localCache.getCatch('token')
       if (token) {
