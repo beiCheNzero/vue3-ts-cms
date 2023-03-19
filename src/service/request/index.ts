@@ -71,7 +71,7 @@ class LJLRequest {
 
         // 判断返回数据是否正确
         const data = res.data
-        console.log(res)
+        console.log('拦截器', res)
         if (data.returnCode === -1001) {
           console.log('请求失败,错误信息')
         } else if (data.returnCode === '') {

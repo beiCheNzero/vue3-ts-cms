@@ -1,11 +1,11 @@
 <template>
   <div class="login-account">
     <el-form label-width="60px" :rules="rules" :model="account" ref="formRef">
-      <el-form-item label="账号" prop="name">
-        <el-input v-model="account.name" />
+      <el-form-item label="账号" prop="user_name">
+        <el-input v-model="account.user_name" />
       </el-form-item>
-      <el-form-item label="密码" prop="password">
-        <el-input v-model="account.password" show-password />
+      <el-form-item label="密码" prop="user_password">
+        <el-input v-model="account.user_password" show-password />
       </el-form-item>
     </el-form>
   </div>
@@ -24,8 +24,8 @@ export default defineComponent({
 
     const account = reactive({
       // 如果获取是undefined就给他一个空的字符串
-      name: localCache.getCatch('name') ?? '',
-      password: localCache.getCatch('password') ?? ''
+      user_name: localCache.getCatch('name') ?? '',
+      user_password: localCache.getCatch('password') ?? ''
     })
     const formRef = ref<InstanceType<typeof ElForm>>()
     const loginAction = (isKeepPassword: boolean) => {
@@ -35,8 +35,8 @@ export default defineComponent({
           // 1.判断是否需要记住密码
           if (isKeepPassword) {
             // 本地缓存
-            localCache.setCatch('name', account.name)
-            localCache.setCatch('password', account.password)
+            localCache.setCatch('name', account.user_name)
+            localCache.setCatch('password', account.user_password)
           } else {
             localCache.deleteCatch('name')
             localCache.deleteCatch('password')

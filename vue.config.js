@@ -21,10 +21,11 @@ module.exports = defineConfig({
   devServer: {
     proxy: {
       '^/api': {
-        target: 'http://152.136.185.210:5000',
+        target: 'http://127.0.0.1:2222',
         pathRewrite: {
           '^/api': ''
         },
+        ws: true,
         changeOrigin: true //虚拟的站点需要更管origin
       }
     }

@@ -31,20 +31,20 @@ const store = createStore<IRootState>({
     // 请求使出数据
     async getInitialDataAction({ commit }) {
       // 1.请求部门和角色数据
-      const departmentResult = await getPageListData('/department/list', {
-        offset: 0,
-        size: 100
-      })
-      const { list: departmentList } = departmentResult.data
+      // const departmentResult = await getPageListData('/department/list', {
+      //   offset: 0,
+      //   size: 100
+      // })
+      // const { list: departmentList } = departmentResult.data
       // 这里起别名不能用as  list: roleList这种是es6之后的语法
-      const roleResult = await getPageListData('/role/list', { offset: 0, size: 100 })
+      const roleResult = await getPageListData('/users/roleList', { offset: 0, size: 100 })
       const { list: roleList } = roleResult.data
       // 请求完整的权限菜单
-      const menuResult = await getPageListData('/menu/list', {})
+      const menuResult = await getPageListData('/users/menuList', {})
       const { list: menuList } = menuResult.data
 
       // 2.保存数据
-      commit('changeEntirDepartment', departmentList)
+      // commit('changeEntirDepartment', departmentList)
       commit('changeEntirRole', roleList)
       commit('changeEntirMenu', menuList)
     }
